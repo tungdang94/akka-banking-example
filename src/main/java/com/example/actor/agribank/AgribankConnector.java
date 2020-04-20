@@ -22,6 +22,7 @@ public class AgribankConnector extends AbstractBehavior<AgribankConnector.Comman
 	
 	private AgribankConnector(ActorContext<AgribankConnector.Command> context) {
 		super(context);
+		context.getLog().info("AgribankConnector actor started...");
 	}
 	
 	@Override

@@ -27,6 +27,8 @@ public class BankLinking extends AbstractBehavior<BankLinkingMessage.Command> {
 		super(context);
 		scheduler = getContext().getSystem().scheduler();
 		askTimeout = getContext().getSystem().settings().config().getDuration("server.routes.ask-timeout");
+		
+		context.getLog().info("BankLinking actor started...");
 	}
 	
 	@Override
