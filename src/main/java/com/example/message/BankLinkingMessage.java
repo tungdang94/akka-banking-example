@@ -19,6 +19,15 @@ public class BankLinkingMessage {
 		public final String phone;
 		public final String bankCode;
 		public final ActorRef<BankLinkingResponse> replyTo;
+		
+		public BankLinkingRequest(LinkBankInfo info, ActorRef<BankLinkingResponse> ref) {
+			this.requestId = info.requestId;
+			this.requestTime = info.requestTime;
+			this.fullName = info.fullName;
+			this.phone = info.phone;
+			this.bankCode = info.bankCode;
+			this.replyTo  = ref;
+		}
 	}
 	
 	public static final class LinkBankInfo {
