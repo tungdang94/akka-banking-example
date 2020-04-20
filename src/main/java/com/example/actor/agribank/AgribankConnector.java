@@ -8,7 +8,6 @@ import akka.actor.typed.javadsl.Behaviors;
 import akka.actor.typed.javadsl.Receive;
 import com.example.util.DateUtil;
 
-import java.util.Calendar;
 import java.util.UUID;
 
 public class AgribankConnector extends AbstractBehavior<AgribankConnector.Command> {
@@ -38,7 +37,7 @@ public class AgribankConnector extends AbstractBehavior<AgribankConnector.Comman
 		
 		// TODO using Client API of akka-http and process response...
 		
-		r.replyTo.tell(new AgribankLinking.AgribankLinkingResponse(UUID.randomUUID().toString(), DateUtil.toDateString(Calendar.getInstance().getTime(), DateUtil.DATE_FORMAT_1),
+		r.replyTo.tell(new AgribankLinking.AgribankLinkingResponse(UUID.randomUUID().toString(), DateUtil.getCurrentDateString(),
 			"CODE", "00", "Sucesss"));
 		return this;
 	}

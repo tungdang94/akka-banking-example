@@ -2,6 +2,7 @@ package com.example.util;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class DateUtil {
@@ -14,6 +15,11 @@ public class DateUtil {
 		}
 		DateFormat df = new SimpleDateFormat(pattern);
 		return df.format(date);
+	}
+	
+	public static String getCurrentDateString() {
+		DateFormat df = new SimpleDateFormat(DATE_FORMAT_1);
+		return df.format(Calendar.getInstance().getTime());
 	}
 	
 }
